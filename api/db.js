@@ -1,19 +1,16 @@
-import mysql from "mysql2";
+// db.js
+import mongoose from 'mongoose';
 
-export const db = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "root",
-  password: "root",
-  database: "thesite"
+mongoose.connect('mongodb://127.0.0.1:27017/biggaminggamers', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
-// Установка подключения
-db.connect((err) => {
-  if (err) {
-    console.error('Ошибка подключения к базе данных:', err);
-  } else {
-    console.log('Подключение к базе данных успешно.');
-  }
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'Ошибка подключения к базе данных MongoDB:'));
+db.once('open', () => {
+  console.log('Подключение к базе данных MongoDB успешно.');
 });
 
-export default db;
+export { db }; // Экспортируем объект db как свойство объекта module.exports

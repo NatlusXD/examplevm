@@ -2,8 +2,9 @@ import {
   createBrowserRouter,
   RouterProvider,
   Route,
-  Outlet,
+  Outlet, Navigate,
 } from "react-router-dom";
+import AdminPanel from "./AdminPanel";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Write from "./pages/Write";
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/write",
         element: <Write />,
+      },
+      {
+        path: '/admin',
+        element: <AdminPanel />,
       },
     ],
   },

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import Chat from '../components/Chat'
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -71,6 +72,9 @@ const Home = () => {
           </div>
         ))}
       </div>
+
+      <Chat/>
+
     </div>
   );
 };
