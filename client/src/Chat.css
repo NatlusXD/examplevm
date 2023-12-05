@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&family=Tienne&display=swap');
+
+
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px; /* Ширина окна чата */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease; /* Анимация сдвига */
+}
+
+.chat-container.closed {
+    right: -290px; /* Закрытый чат сдвигается влево за пределы экрана */
+}
+
+.chat-container:hover {
+    right: 6px; /* Сдвигаем чат вправо при наведении мыши */
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #b9e7e7;
+    color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.chat-title {
+    font-weight: bold;
+}
+
+.chat-toggle-button {
+    background-color: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-height: 300px; /* Максимальная высота окна чата */
+    overflow-y: auto; /* Включить прокрутку, если сообщений больше, чем максимальная высота */
+}
+
+.chat-messages {
+    flex-grow: 1;
+    overflow-y: auto; /* Включить прокрутку внутри окна сообщений */
+}
+
+.chat-message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    max-width: 70%; /* Максимальная ширина сообщения */
+}
+
+.chat-message.user {
+    background-color: teal;;
+    align-self: flex-start;
+}
+
+.chat-message.bot {
+    background-color: #95eaea;
+    align-self: flex-end;
+}
+
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+}
+
+button {
+    background-color: #a9a3a3;
+    color: teal;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
